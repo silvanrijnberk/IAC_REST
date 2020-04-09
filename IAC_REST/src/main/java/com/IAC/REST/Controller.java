@@ -16,8 +16,8 @@ public class Controller {
         Date date = new Date();
         return dateFormat.format(date);
     }
-    @PostMapping("/welcome")
-    public String welcome(@RequestBody String name) {
+    @GetMapping(value = "/welcome/{name}")
+    public String welcome(@PathVariable(value = "name") String name) {
         return "Welkom "+name+"!";
     }
 
